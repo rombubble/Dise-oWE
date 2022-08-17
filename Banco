@@ -1,0 +1,81 @@
+public class MainThis {
+
+    
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int opcion, monto;
+        String nombre;
+        
+        System.out.println("Ingresa nombre y monto");
+        nombre = teclado.next();
+        monto = teclado.nextInt();
+        
+        Cliente cliente = new Cliente(nombre, monto);
+        Banco m = new Banco();
+        m.mostrararray(cliente);
+        
+        do{
+            System.out.println("Ingrese opcion");
+            opcion = teclado.nextInt();
+            switch(opcion){
+                case 1:
+                    
+                    break;
+            }
+        }while(opcion!=0);
+    }
+    
+}
+
+Banco ///
+
+import java.util.ArrayList;
+
+
+public class Banco {
+   
+   private ArrayList<Cliente> Clientes;
+    
+    public Banco(){   
+    Clientes = new ArrayList<Cliente>();
+    
+    }
+    public void agregarcliente(Cliente cliente){
+        Clientes.add(cliente);
+        
+    }
+    public void mostrararray(Cliente cliente){
+        System.out.println();
+    }
+}
+
+Cliente ///
+
+public class Cliente {
+    private String nombre;
+    private int monto;
+    
+    
+    public Cliente(String nombre, int monto){
+        this.nombre = nombre;
+        this.monto = monto;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getMonto() {
+        return monto;
+    }
+
+    public void setMonto(int monto) {
+        this.monto = monto;
+    }
+}
+
+    
